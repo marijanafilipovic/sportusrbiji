@@ -5,8 +5,9 @@ global $conn;
 include_once"../head.html";
 /*
 if($_SESSION['status'] == 3){}
+is_numeric || javascript validation
 */
-$uid =$_GET['uid'];
+$uid =($_GET['uid']);
 
     echo "<div class='innerVest' style='height:480px; width:950px;'>";
 echo "<div class='innerPopular' style='padding-left:50px; margin-botton: 150px; padding-top:50px'><img src='uploadimg/". $uid .".jpg' style='width:80px' 'height:80px'  /></div>";
@@ -61,7 +62,10 @@ echo "<p><input type='submit' name= 'set4' value='Deaktiviran korisnik'/></p><br
    
             }
               echo"</p>";
-            //CHANGE STATUS ACTIVE
+            /*CHANGE STATUS ACTIVE
+            implement swich case for post param 
+            and than can use one same query 
+            */
               if(isset($_POST['set2'])){
                     $q="UPDATE users SET status = 2 WHERE uid = '{$uid}'";
                      mysqli_query($conn, $q);
