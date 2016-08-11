@@ -1,0 +1,1 @@
+<p style="float:left; color:#615E52; padding-left:120px;" >Sport U Srbiji<br/> Vam zeli: Dobar dan <? echo $_SESSION['uname']."<br/>";?>  </p>
